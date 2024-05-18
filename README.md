@@ -1,4 +1,5 @@
 # **Utrainer**
+NOTE: SITE IS STILL LARGELY UNDER CONSTRUCTION, DO NOT USE RIGHT NOW
 ## **What is Utrainer?**
 *Utrainer is a website meant to serve as a host of UIL training materials for various different subject areas, such as the UIL math events, science, computer science, etc.*
 ## **Setup**
