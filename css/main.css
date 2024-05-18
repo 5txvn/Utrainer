@@ -1,0 +1,22 @@
+.nav-icon {
+    height: 1em;
+    display: inline-block;
+    margin-top: -4px;
+}
+
+nav {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+.main {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 5%;
+}
+
+.logo {
+    height: 1em;
+    width: 1em;
+}

@@ -1,0 +1,17 @@
+.icon {
+    height: 1em;
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.heading-icon {
+    height: 1em;
+    display: inline-block;
+    margin-top: -4px;
+}
+
+.main {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 5%;
+}

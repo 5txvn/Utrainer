@@ -1,0 +1,29 @@
+.main {
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-top: 5%;
+}
+
+.icon {
+    display: inline-block;
+    height: 1em;
+    margin-top: -4px;
+}
+
+nav {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h4 {
+    margin-top: 3%;
+}
+
+p {
+    margin-top: 2%;
+}
