@@ -14,6 +14,18 @@ app.get("/about", (req, res) => {
 app.get("/number-sense", (req, res) => {
     res.sendFile(path.join(__dirname, "html/events/number-sense/number-sense.html"))
 })
+app.get("/calculator", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/events/calculator.html"))
+})
+app.get("/mathematics", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/events/mathematics.html"))
+})
+app.get("/science", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/events/science.html"))
+})
+app.get("/computer-science", (req, res) => {
+    res.sendFile(path.join(__dirname, "html/events/computer-science.html"))
+})
 
 
 app.get("/number-sense/memorization/squares", (req, res) => {
