@@ -35,6 +35,7 @@ app.get("/number-sense/memorization/squares", (req, res) => {
 //host folders
 app.use("/images", express.static(path.join(__dirname, "public/images")));
 app.use("/css", express.static(path.join(__dirname, "css")));
+app.use("/js", express.static(path.join(__dirname, "js")));
 
 app.listen(PORT, () => {
     console.log(`Server started on ${PORT}`)

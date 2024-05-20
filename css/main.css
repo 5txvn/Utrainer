@@ -20,3 +20,8 @@ nav {
     height: 1em;
     width: 1em;
 }
+
+.form-control:focus {
+    box-shadow: none !important;
+    border-color: black;
+}
