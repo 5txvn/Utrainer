@@ -1,5 +1,6 @@
 let score = 0;
-let tempNum
+let tempNum;
+let currentAnswer;
 
 $(document).ready(() => {
     $(".answer-box").hide()
@@ -8,24 +9,31 @@ $(document).ready(() => {
 
 function generateProblem(min, max) {
     let num = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(tempNum)
     if (!tempNum) {
+        console.log("minors!!")
         tempNum = num
-    } else if (num == tempNum) {
-        while (num != tempNum) {
-            num = Math.floor(Math.random() * (max - min + 1)) + min;
-        }
     }
-    let answer = num * num;
+    while (num == tempNum) {
+        num = Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    tempNum = num
+    currentAnswer = num * num;
     $(".problem").html(`What is $${num}^2$?`)
     MathJax.typeset()
-
-    $(".answer").keyup(() => {
-        if ($(".answer").val() == answer) {
-            score++;
-            $(".score").text(`Score: ${score}`)
-            $(".answer").val("")
-            generateProblem(min, max)
-        }
+    console.log(`Real Answer !!! ${currentAnswer}`)
+    $(document).ready(() => {
+        $(".answer").on("keyup", () => {
+            setTimeout(() => {
+                if ($(".answer").val() == currentAnswer) {
+                    console.log($(".answer").val())
+                    score++;
+                    $(".score").text(`Score: ${score}`)
+                    $(".answer").val("")
+                    generateProblem(min, max)
+                }
+            }, 25)
+        })
     })
 }
 
