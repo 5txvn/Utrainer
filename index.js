@@ -28,6 +28,9 @@ app.get("/science", (req, res) => {
 app.get("/computer-science", (req, res) => {
   res.sendFile(path.join(__dirname, "html/events/computer-science.html"));
 });
+app.get("/spelling", (req, res) => {
+  res.sendFile(path.join(__dirname, "html/events/spelling.html"));
+});
 app.get("/sandbox", (req, res) => {
   res.sendFile(path.join(__dirname, "sandbox.html"));
 });

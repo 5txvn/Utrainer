@@ -42,7 +42,6 @@ function gen(multiplier) {
     */
   let num = Math.random() * 0.9 + 0.1;
   num = Math.floor(num * Math.pow(10, 3));
-  console.log(num);
   num = num / Math.pow(10, 3 - multiplier);
 
   //chance to draw pi
@@ -141,16 +140,35 @@ function generateCruncher(problem) {
 }
 
 function applySigfigs(number) {
-  console.log(number);
   let logged = Math.floor(Math.log10(Math.abs(number)));
-  console.log(logged);
   number /= Math.pow(10, logged - 2);
   number = Math.round(number);
   number /= Math.pow(10, -(logged - 2));
   return number;
 }
 
+function checkAnswer() {
+  let value = document.getElementById("input-number").value;
+  if (value == applySigfigs(test[1])) {
+    $("#input-number").val("");
+    regenerateProblem();
+    score += 1;
+    $(".score").text("Score: " + score);
+  }
+}
+
+function regenerateProblem() {
+  test = generateCruncher(choose(1, 3));
+  $(".problem").text(`$${test[0]} \\space = \\space \\dots$`);
+  $(".answer").text(`Answer: ${applySigfigs(test[1])}`);
+  MathJax.typeset();
+}
+
+let score = 0;
 let test = generateCruncher(choose(1, 3));
 $(".problem").text(`$${test[0]} \\space = \\space \\dots$`);
 $(".answer").text(`Answer: ${applySigfigs(test[1])}`);
 MathJax.typeset();
+addEventListener("input", (event) => {
+  checkAnswer();
+});
