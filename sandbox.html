@@ -27,9 +27,28 @@
   </head>
   <body>
     <h2 class="problem"></h2>
-    <input type="number" id="input-number" />
+    <input
+      type="number"
+      id="input-number"
+      placeholder="Input Answer"
+      autocomplete="off"
+    />
     <h2 class="score">Score: 0</h2>
     <h2 class="answer"></h2>
   </body>
   <script src="/sandbox-script"></script>
+  <style>
+    /* Hide the numbers from the input field:*/
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  </style>
 </html>

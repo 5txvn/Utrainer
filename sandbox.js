@@ -150,7 +150,6 @@ function applySigfigs(number) {
 function checkAnswer() {
   let value = document.getElementById("input-number").value;
   if (value == applySigfigs(test[1])) {
-    $("#input-number").val("");
     regenerateProblem();
     score += 1;
     $(".score").text("Score: " + score);
@@ -158,6 +157,7 @@ function checkAnswer() {
 }
 
 function regenerateProblem() {
+  $("#input-number").val("");
   test = generateCruncher(choose(1, 3));
   $(".problem").text(`$${test[0]} \\space = \\space \\dots$`);
   $(".answer").text(`Answer: ${applySigfigs(test[1])}`);
@@ -166,9 +166,7 @@ function regenerateProblem() {
 
 let score = 0;
 let test = generateCruncher(choose(1, 3));
-$(".problem").text(`$${test[0]} \\space = \\space \\dots$`);
-$(".answer").text(`Answer: ${applySigfigs(test[1])}`);
-MathJax.typeset();
+regenerateProblem();
 addEventListener("input", (event) => {
   checkAnswer();
 });
